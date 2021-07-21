@@ -11,8 +11,6 @@ module.exports = {
     '<rootDir>/dist/',
     '<rootDir>/build/',
     '<rootDir>/node_modules/',
-    '<rootDir>/coverage/',
-    '<rootDir>/globalConfig.json'
-  ],
-  preset: '@shelf/jest-mongodb'
+    '<rootDir>/coverage/'
+  ]
 }
