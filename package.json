@@ -1,0 +1,51 @@
+{
+  "name": "ewally-code-challenge",
+  "version": "1.0.0",
+  "description": "Desafio de backend da Ewally",
+  "main": "src/main/index.js",
+  "scripts": {
+    "start": "node src/main/index.js",
+    "build": "shx rm -rf build && shx cp -rf src build && shx cp package.json build",
+    "postbuild": "shx rm -rf build/**/*.test.js build/**/*.spec.js",
+    "up": "docker-compose up",
+    "dev": "nodemon --inspect src/main/index.js",
+    "test": "jest --silent --colors --noStackTrace --passWithNoTests --runInBand",
+    "test:unit": "npm test -- --watch -c jest-unit-config.js",
+    "test:integration": "npm test -- --watch -c jest-integration-config.js",
+    "test:staged": "npm test -- --findRelatedTests",
+    "test:ci": "npm test -- --coverage",
+    "prepare": "husky install",
+    "pre-commit": "lint-staged"
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/macmessa/ewally-backend-code-challenge.git"
+  },
+  "author": "Marco Aurélio Messa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/macmessa/ewally-backend-code-challenge/issues"
+  },
+  "homepage": "https://github.com/macmessa/ewally-backend-code-challenge#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.4",
+    "@commitlint/config-conventional": "^12.1.4",
+    "husky": "^6.0.0",
+    "jest": "^27.0.4",
+    "lint-staged": "^11.0.0",
+    "nodemon": "^2.0.7",
+    "shx": "^0.3.3",
+    "standard": "^16.0.3",
+    "supertest": "^6.1.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "fast-glob": "^3.2.5",
+    "joi": "^17.4.0"
+  }
+}
