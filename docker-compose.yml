@@ -1,0 +1,12 @@
+version: "3"
+services:
+  api:
+    container_name: api-container
+    build: .
+    image: ewally-backend-code-challenge
+    restart: always
+    command: npm start
+    volumes:
+      - ./build:/usr/src/ewally-backend-code-challenge/src
+    ports:
+      - "8080:8080"
